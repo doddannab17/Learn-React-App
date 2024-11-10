@@ -17,19 +17,23 @@ function App() {
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
+      <Book imageUrl={imageUrl} bookTitle={bookTitle} author={author}>
+        <p>Hello Paragraph</p>
+      </Book>
+      <Book imageUrl={imageUrl} bookTitle={bookTitle} author={author} />
+      <Book imageUrl={imageUrl} bookTitle={bookTitle} author={author} />
     </section>
   );
 };
 
-const Book = () => {
+const Book = (props) => {
+  const { imageUrl, bookTitle, author, children } = props;
   return (
     <article className="book">
       <img src={imageUrl} alt={bookTitle} />
       <h2>{bookTitle}</h2>
       <h4>{author}</h4>
+      <p>{children}</p>
     </article>
   );
 };
