@@ -3,40 +3,38 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <SubComponent />
-        <SubComponent2 />
-        <MessageComponent />
-        <GreetingComponent />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BookList />
     </div>
   );
 }
 
-function SubComponent() {
-  return <h1>Hello Component 1</h1>;
-}
-
-function SubComponent2() {
-  return <h4>Hello Component 2</h4>;
-}
-
-const MessageComponent = () => <h2>Hello Message Component</h2>;
-const GreetingComponent = () => {
-  return <h3>Greeting message</h3>;
+const BookList = () => {
+  return (
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
 };
+
+const Book = () => {
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+const Title = () => <h2>Amma Diarylo Konni Pageelu</h2>;
+const Image = () => (
+  <img
+    src="https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg"
+    alt="Amma Diarylo Konni Pageelu"
+  ></img>
+);
+const Author = () => <h2>Ravi Mantri</h2>;
 
 export default App;
