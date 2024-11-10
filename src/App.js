@@ -2,49 +2,49 @@ import "./App.css";
 
 const books = [
   {
-    image:
+    imageUrl:
       "https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg",
     author: "Ravi Mantri",
     title: "Amma Diarylo Konni Pageelu",
   },
   {
-    image:
+    imageUrl:
       "https://images-eu.ssl-images-amazon.com/images/I/81Dky+tD+pL._AC_UL600_SR600,400_.jpg",
     author: "Harshvardhan Saraf",
     title: "The Satvic Revolution",
   },
   {
-    image:
+    imageUrl:
       "https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg",
     author: "Ravi Mantri",
     title: "Amma Diarylo Konni Pageelu",
   },
   {
-    image:
+    imageUrl:
       "https://images-eu.ssl-images-amazon.com/images/I/81Dky+tD+pL._AC_UL600_SR600,400_.jpg",
     author: "Harshvardhan Saraf",
     title: "The Satvic Revolution",
   },
   {
-    image:
+    imageUrl:
       "https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg",
     author: "Ravi Mantri",
     title: "Amma Diarylo Konni Pageelu",
   },
   {
-    image:
+    imageUrl:
       "https://images-eu.ssl-images-amazon.com/images/I/81Dky+tD+pL._AC_UL600_SR600,400_.jpg",
     author: "Harshvardhan Saraf",
     title: "The Satvic Revolution",
   },
   {
-    image:
+    imageUrl:
       "https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg",
     author: "Ravi Mantri",
     title: "Amma Diarylo Konni Pageelu",
   },
   {
-    image:
+    imageUrl:
       "https://images-eu.ssl-images-amazon.com/images/I/81Dky+tD+pL._AC_UL600_SR600,400_.jpg",
     author: "Harshvardhan Saraf",
     title: "The Satvic Revolution",
@@ -62,20 +62,19 @@ function App() {
 const BookList = () => {
   return (
     <section className="booklist">
-      {books.map((book) => {
-        const { image, author, title } = book;
-        return <Book imageUrl={image} bookTitle={title} author={author} />;
+      {books.map((book, index) => {
+        return <Book {...book} key={index} />;
       })}
     </section>
   );
 };
 
 const Book = (props) => {
-  const { imageUrl, bookTitle, author, children } = props;
+  const { imageUrl, title, author, children } = props;
   return (
     <article className="book">
-      <img src={imageUrl} alt={bookTitle} />
-      <h2>{bookTitle}</h2>
+      <img src={imageUrl} alt={title} />
+      <h2>{title}</h2>
       <h4>{author}</h4>
       <p>{children}</p>
     </article>
