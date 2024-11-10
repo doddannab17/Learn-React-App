@@ -14,7 +14,7 @@ const Book = (props) => {
       <h2>{title}</h2>
       <h4>{author}</h4>
       <p>{children}</p>
-      <button onClick={handleGetBookFunction}>Click Here </button>
+      <button onClick={() => getBookById(id)}>Click Here </button>
     </article>
   );
 };
