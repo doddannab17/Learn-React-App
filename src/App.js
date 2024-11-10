@@ -7,6 +7,8 @@ function App() {
       <header className="App-header">
         <SubComponent />
         <SubComponent2 />
+        <MessageComponent />
+        <GreetingComponent />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -29,7 +31,12 @@ function SubComponent() {
 }
 
 function SubComponent2() {
-  return <h1>Hello Component 2</h1>;
+  return <h4>Hello Component 2</h4>;
 }
+
+const MessageComponent = () => <h2>Hello Message Component</h2>;
+const GreetingComponent = () => {
+  return <h3>Greeting message</h3>;
+};
 
 export default App;
