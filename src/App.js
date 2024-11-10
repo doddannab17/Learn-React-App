@@ -35,6 +35,6 @@ const Image = () => (
     alt="Amma Diarylo Konni Pageelu"
   ></img>
 );
-const Author = () => <h2>Ravi Mantri</h2>;
+const Author = () => <h4>Ravi Mantri</h4>;
 
 export default App;
