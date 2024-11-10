@@ -1,10 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <SubComponent />
+        <SubComponent2 />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -20,6 +22,14 @@ function App() {
       </header>
     </div>
   );
+}
+
+function SubComponent() {
+  return <h1>Hello Component 1</h1>;
+}
+
+function SubComponent2() {
+  return <h1>Hello Component 2</h1>;
 }
 
 export default App;
