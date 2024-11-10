@@ -1,10 +1,55 @@
-import logo from "./logo.svg";
 import "./App.css";
 
-const imageUrl =
-  "https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg";
-const author = "Ravi Mantri";
-const bookTitle = "Amma Diarylo Konni Pageelu";
+const books = [
+  {
+    image:
+      "https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg",
+    author: "Ravi Mantri",
+    title: "Amma Diarylo Konni Pageelu",
+  },
+  {
+    image:
+      "https://images-eu.ssl-images-amazon.com/images/I/81Dky+tD+pL._AC_UL600_SR600,400_.jpg",
+    author: "Harshvardhan Saraf",
+    title: "The Satvic Revolution",
+  },
+  {
+    image:
+      "https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg",
+    author: "Ravi Mantri",
+    title: "Amma Diarylo Konni Pageelu",
+  },
+  {
+    image:
+      "https://images-eu.ssl-images-amazon.com/images/I/81Dky+tD+pL._AC_UL600_SR600,400_.jpg",
+    author: "Harshvardhan Saraf",
+    title: "The Satvic Revolution",
+  },
+  {
+    image:
+      "https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg",
+    author: "Ravi Mantri",
+    title: "Amma Diarylo Konni Pageelu",
+  },
+  {
+    image:
+      "https://images-eu.ssl-images-amazon.com/images/I/81Dky+tD+pL._AC_UL600_SR600,400_.jpg",
+    author: "Harshvardhan Saraf",
+    title: "The Satvic Revolution",
+  },
+  {
+    image:
+      "https://images-eu.ssl-images-amazon.com/images/I/81rjyBm+UYL._AC_UL900_SR900,600_.jpg",
+    author: "Ravi Mantri",
+    title: "Amma Diarylo Konni Pageelu",
+  },
+  {
+    image:
+      "https://images-eu.ssl-images-amazon.com/images/I/81Dky+tD+pL._AC_UL600_SR600,400_.jpg",
+    author: "Harshvardhan Saraf",
+    title: "The Satvic Revolution",
+  },
+];
 
 function App() {
   return (
@@ -17,11 +62,10 @@ function App() {
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book imageUrl={imageUrl} bookTitle={bookTitle} author={author}>
-        <p>Hello Paragraph</p>
-      </Book>
-      <Book imageUrl={imageUrl} bookTitle={bookTitle} author={author} />
-      <Book imageUrl={imageUrl} bookTitle={bookTitle} author={author} />
+      {books.map((book) => {
+        const { image, author, title } = book;
+        return <Book imageUrl={image} bookTitle={title} author={author} />;
+      })}
     </section>
   );
 };
