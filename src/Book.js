@@ -10,6 +10,7 @@ const Book = (props) => {
   };
   return (
     <article className="book">
+      <span className="number">#{id}</span>
       <img src={imageUrl} alt={title} />
       <h2>{title}</h2>
       <h4>{author}</h4>
