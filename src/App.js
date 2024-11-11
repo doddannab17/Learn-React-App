@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { books } from "./books";
+import Book from "./Book";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BookList />
     </div>
   );
 }
+
+function getBookById(id) {
+  const book = books.find((book) => book.id === id);
+  console.log("Found the book ", book);
+}
+const BookList = () => {
+  return (
+    <>
+      <h1>Best Selling Books</h1>
+      <section className="booklist">
+        {books.map((book, index) => {
+          return <Book {...book} key={index} getBookById={getBookById} />;
+        })}
+      </section>
+    </>
+  );
+};
 
 export default App;
